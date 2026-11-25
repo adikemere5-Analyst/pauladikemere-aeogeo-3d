@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Paul Adikemere O. | 3D AEO &amp; GEO Visibility Showcase &amp; Pricing</title>
-  <meta name="description" content="Paul Adikemere O. — Bold 3D AEO &amp; GEO Visibility showcase and transparent pricing: Free 1-Page Sample, $200 Multi-Prompt AI Visibility Audit (100% credited), and Custom Implementation." />
+  <meta name="description" content="Paul Adikemere O. — Bold 3D AEO &amp; GEO Visibility showcase and transparent pricing: Free 1-Page Sample, $200 Multi-Prompt AI Visibility Audit (delivered in 48 hours, 100% credited), and Custom Implementation." />
   <meta name="theme-color" content="#070816" />
   <link rel="icon" type="image/svg+xml" href="logo.svg" />
 
@@ -73,7 +73,7 @@
             "priceSpecification": {
               "@type": "PriceSpecification",
               "priceCurrency": "USD",
-              "description": "Custom quote after audit ($200 audit fee 100% credited)"
+              "description": "Scoped after audit based on page & schema count ($200 audit fee 100% credited)"
             },
             "description": "Full rollout of structured buyer Q&A blocks, AI-ready service summaries, entity alignment, and LocalBusiness & FAQPage JSON-LD schema."
           }
@@ -113,7 +113,7 @@
           "name": "How does the $200 audit credit work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The $200 multi-prompt audit is 100% credited toward full implementation if you move forward with rolling out the structured copy, Q&A blocks, and schema fixes."
+            "text": "The $200 multi-prompt audit is delivered within 48 hours and is 100% credited toward full implementation if you move forward with rolling out the structured copy, Q&A blocks, and schema fixes."
           }
         }
       ]
@@ -278,6 +278,7 @@
       font-weight: 800;
       font-size: 0.95rem;
       text-decoration: none;
+      cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       width: 100%;
     }
@@ -285,6 +286,7 @@
       background: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 55%, var(--emerald) 100%);
       color: #050714;
       box-shadow: 0 12px 30px -6px rgba(0, 240, 255, 0.55);
+      border: none;
     }
     .btn-neon:hover { transform: translateY(-3px) scale(1.01); }
     .btn-ghost {
@@ -441,7 +443,8 @@
     .tier-title { font-size: 1.2rem; font-weight: 900; color: #ffffff; margin-bottom: 8px; }
     .tier-price { font-size: 2.35rem; font-weight: 900; color: var(--emerald); line-height: 1.1; }
     .tier-price span { font-size: 0.88rem; font-weight: 700; color: var(--muted); }
-    .tier-note { font-size: 0.85rem; font-weight: 700; color: var(--cyan); margin: 8px 0 14px; }
+    .tier-note { font-size: 0.85rem; font-weight: 700; color: var(--cyan); margin: 8px 0 4px; }
+    .tier-subnote { font-size: 0.8rem; color: var(--muted); margin-bottom: 14px; }
     .tier-list { list-style: none; margin-bottom: 20px; }
     .tier-list li {
       display: flex;
@@ -588,14 +591,41 @@
 
     .sample-helper {
       margin-top: 20px;
-      padding: 14px 16px;
+      padding: 16px 18px;
       border-radius: 12px;
-      background: rgba(7, 8, 22, 0.75);
+      background: rgba(7, 8, 22, 0.78);
       border: 1px dashed rgba(0, 240, 255, 0.45);
-      font-size: 0.88rem;
+      font-size: 0.89rem;
       color: #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    @media (min-width: 780px) {
+      .sample-helper {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
     .sample-helper strong { color: var(--cyan); }
+    .sample-helper a { color: var(--cyan); font-weight: 700; text-decoration: none; }
+    .copy-template-btn {
+      background: rgba(0, 240, 255, 0.14);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.84rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .copy-template-btn:hover {
+      background: rgba(0, 240, 255, 0.24);
+      transform: translateY(-1px);
+    }
 
     details.qa-accordion {
       background: linear-gradient(150deg, var(--surface), var(--surface-2));
@@ -763,6 +793,7 @@
               <h3 class="tier-title">Free 1-Page Sample</h3>
               <div class="tier-price">$0 <span>/ sample</span></div>
               <div class="tier-note">No obligation before full audit</div>
+              <div class="tier-subnote">Quick 1-prompt snapshot in your city</div>
               <ul class="tier-list">
                 <li><span class="check">&#10003;</span> Live buyer prompt snapshot in your market</li>
                 <li><span class="check">&#10003;</span> Spots missing Q&amp;A, pricing context, or schema</li>
@@ -778,6 +809,7 @@
               <h3 class="tier-title">Full Multi-Prompt AI Audit</h3>
               <div class="tier-price">$200 <span>/ one-time</span></div>
               <div class="tier-note">100% Credited Toward Implementation</div>
+              <div class="tier-subnote">Delivered within 48 hours</div>
               <ul class="tier-list">
                 <li><span class="check">&#10003;</span> 15 buyer prompts across ChatGPT, Perplexity, Gemini &amp; Grok</li>
                 <li><span class="check">&#10003;</span> Competitor citation gap breakdown</li>
@@ -794,6 +826,7 @@
               <h3 class="tier-title">AI-Ready Implementation</h3>
               <div class="tier-price">Custom <span>/ scope</span></div>
               <div class="tier-note">$200 audit fee applied 100% as credit</div>
+              <div class="tier-subnote">Scoped after audit based on page &amp; schema count</div>
               <ul class="tier-list">
                 <li><span class="check">&#10003;</span> Full direct-answer Q&amp;A &amp; service page blocks</li>
                 <li><span class="check">&#10003;</span> Entity &amp; directory consistency alignment</li>
@@ -806,7 +839,10 @@
         </div>
 
         <div class="sample-helper">
-          <strong>What to send to get started:</strong> Email <em>Business Name</em>, <em>Website URL</em>, <em>City &amp; Niche</em>, and <em>1–2 questions customers ask before hiring</em> to <a href="mailto:pauladikemere@gmail.com">pauladikemere@gmail.com</a>, or test live prompts right now in the <a href="audit.html">1-Click Audit Launcher</a>.
+          <div>
+            <strong>What to send to get started:</strong> Email <em>Business Name</em>, <em>Website URL</em>, <em>City &amp; Niche</em>, and <em>1–2 questions customers ask before hiring</em> to <a href="mailto:pauladikemere@gmail.com">pauladikemere@gmail.com</a>, or test live prompts in the <a href="audit.html">1-Click Audit Launcher</a>.
+          </div>
+          <button type="button" class="copy-template-btn" id="copyStarterBtn" onclick="copyStarterTemplate()">Copy Starter Email Template</button>
         </div>
       </div>
     </section>
@@ -926,7 +962,7 @@
         <details class="qa-accordion">
           <summary>Q: How does the $200 audit credit work?</summary>
           <div class="qa-body">
-            The $200 multi-prompt audit is 100% credited toward full implementation if you move forward with rolling out the structured copy, Q&amp;A blocks, and schema fixes.
+            The $200 multi-prompt audit is delivered within 48 hours and is 100% credited toward full implementation if you move forward with rolling out the structured copy, Q&amp;A blocks, and schema fixes.
           </div>
         </details>
       </div>
@@ -955,6 +991,25 @@
     function closeMenu() {
       navLinks.classList.remove('open');
       menuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    function copyStarterTemplate() {
+      const template = [
+        "To: pauladikemere@gmail.com",
+        "Subject: Free 1-Page AI Visibility Sample Request",
+        "",
+        "Business Name:",
+        "Website URL:",
+        "City & Niche:",
+        "Top 1-2 Customer Questions:"
+      ].join("\n");
+      const btn = document.getElementById('copyStarterBtn');
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(template).then(() => {
+          btn.textContent = "Copied! Paste into Email";
+          setTimeout(() => { btn.textContent = "Copy Starter Email Template"; }, 3000);
+        }).catch(() => {});
+      }
     }
 
     const tiltStage = document.getElementById('tiltStage');
