@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>1-Click AI Visibility Audit Launcher | Paul Adikemere O.</title>
+  <meta name="theme-color" content="#070816" />
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <style>
+    :root {
+      --bg: #070816;
+      --surface: rgba(18, 22, 48, 0.9);
+      --surface-2: rgba(29, 25, 66, 0.95);
+      --border: rgba(168, 85, 247, 0.32);
+      --cyan: #00f0ff;
+      --violet: #a855f7;
+      --emerald: #10b981;
+      --text: #f8fafc;
+      --muted: #a5b4fc;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: var(--bg);
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.16), transparent 38%),
+        radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.2), transparent 42%);
+      color: var(--text);
+      padding: 16px;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    @media (min-width: 640px) { body { padding: 26px; } }
+    .wrap { max-width: 940px; margin: 0 auto; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar img { height: 52px; width: auto; display: block; }
+    .topbar a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 800;
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    h1 { font-size: clamp(1.4rem, 5vw, 1.9rem); font-weight: 900; margin-bottom: 6px; }
+    .sub { color: var(--muted); font-size: 0.94rem; margin-bottom: 20px; }
+    .card {
+      background: linear-gradient(150deg, var(--surface), var(--surface-2));
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 20px 45px -16px rgba(0, 240, 255, 0.22);
+    }
+    @media (min-width: 640px) { .card { padding: 26px; } }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 14px; }
+    @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+    label { display: block; font-size: 0.83rem; color: var(--muted); margin-bottom: 5px; font-weight: 700; }
+    input, select, textarea {
+      width: 100%;
+      min-height: 48px;
+      background: rgba(7, 8, 22, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 16px;
+      font-family: inherit;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .btn-row { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
+    @media (min-width: 640px) { .btn-row { display: flex; flex-wrap: wrap; } }
+    button {
+      min-height: 48px;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    button:hover { transform: translateY(-2px); }
+    .btn-cyan { background: linear-gradient(135deg, var(--cyan), var(--violet)); color: #050714; }
+    .btn-green { background: var(--emerald); color: #050714; }
+    .btn-dark { background: rgba(7, 8, 22, 0.85); color: var(--text); border: 1px solid var(--border); }
+    .toast {
+      display: none;
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid var(--emerald);
+      color: var(--emerald);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a href="index.html" style="background: transparent; border: none; padding: 0;">
+        <img src="logo.svg" alt="Paul Adikemere O. Logo" />
+      </a>
+      <a href="index.html">&larr; Back to 3D Showcase</a>
+    </div>
+
+    <h1>1-Click AI Visibility Audit Launcher</h1>
+    <p class="sub">Generate a high-intent buyer prompt and launch ChatGPT, Perplexity, Gemini, and Grok in one click.</p>
+
+    <div class="card">
+      <div class="grid">
+        <div>
+          <label for="bizName">Business Name</label>
+          <input id="bizName" type="text" value="5 Stars Home Remodeling Inc." />
+        </div>
+        <div>
+          <label for="contactName">Owner / Contact Name</label>
+          <input id="contactName" type="text" value="Levy" />
+        </div>
+        <div>
+          <label for="city">City / Neighborhood</label>
+          <input id="city" type="text" value="Woodland Hills, CA" />
+        </div>
+        <div>
+          <label for="niche">Industry Preset</label>
+          <select id="niche" onchange="buildPrompt()">
+            <option value="construction">Construction &amp; Remodeling</option>
+            <option value="dental">Cosmetic &amp; Family Dental</option>
+            <option value="hvac">HVAC / Plumbing / Home Services</option>
+            <option value="legal">Law Firm / Attorney</option>
+          </select>
+        </div>
+      </div>
+      <label for="promptBox">Generated Customer Buyer Prompt</label>
+      <textarea id="promptBox"></textarea>
+      <div class="btn-row">
+        <button class="btn-cyan" onclick="copyPrompt()">Copy Prompt</button>
+        <button class="btn-green" onclick="launchAll()">Copy &amp; Open All 4 AI Engines</button>
+        <button class="btn-dark" onclick="openEngine('https://chatgpt.com/')">ChatGPT</button>
+        <button class="btn-dark" onclick="openEngine('https://www.perplexity.ai/')">Perplexity</button>
+        <button class="btn-dark" onclick="openEngine('https://gemini.google.com/app')">Gemini</button>
+        <button class="btn-dark" onclick="openEngine('https://grok.com/')">Grok</button>
+      </div>
+      <div id="promptToast" class="toast">Prompt copied! Paste into your AI search tab.</div>
+    </div>
+  </div>
+
+  <script>
+    function buildPrompt() {
+      const city = document.getElementById('city').value.trim() || 'Los Angeles, CA';
+      const niche = document.getElementById('niche').value;
+      const templates = {
+        construction: `I'm looking for a licensed general contractor in ${city} for a kitchen remodel or ADU build—who do you recommend, what are typical project timelines and cost ranges, and how do permits work?`,
+        dental: `I'm looking for a top-rated cosmetic and family dentist in ${city} for dental implants, veneers, or routine care—who do you recommend, what are typical costs, and do they accept PPO insurance?`,
+        hvac: `I'm looking for a licensed, reliable HVAC and plumbing contractor in ${city} for AC installation or emergency repair—who do you recommend, what are typical pricing ranges, and do they offer same-day service?`,
+        legal: `I'm looking for an experienced personal injury or business attorney in ${city}—who are the most reputable local firms, how do consultations and fees work, and what should I look for?`
+      };
+      document.getElementById('promptBox').value = templates[niche];
+    }
+
+    function showToast(id) {
+      const el = document.getElementById(id);
+      el.style.display = 'block';
+      setTimeout(() => { el.style.display = 'none'; }, 3500);
+    }
+
+    function copyPrompt() {
+      navigator.clipboard.writeText(document.getElementById('promptBox').value);
+      showToast('promptToast');
+    }
+
+    function openEngine(url) {
+      copyPrompt();
+      window.open(url, '_blank');
+    }
+
+    function launchAll() {
+      copyPrompt();
+      ['https://chatgpt.com/', 'https://www.perplexity.ai/', 'https://gemini.google.com/app', 'https://grok.com/'].forEach(u => window.open(u, '_blank'));
+    }
+
+    document.getElementById('city').addEventListener('input', buildPrompt);
+    buildPrompt();
+  </script>
+</body>
+</html>
