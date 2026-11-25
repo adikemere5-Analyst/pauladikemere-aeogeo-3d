@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Paul Adikemere O. | 3D AEO &amp; GEO Visibility Showcase</title>
-  <meta name="description" content="Paul Adikemere O. — Bold 3D AEO &amp; GEO Visibility showcase featuring real AI search audit cases where ChatGPT, Perplexity, Gemini, and Grok skipped local businesses, plus Q&amp;A and a free 1-page sample." />
+  <meta name="description" content="Paul Adikemere O. — Bold 3D AEO &amp; GEO Visibility showcase featuring real AI search audit cases where ChatGPT, Perplexity, Gemini, and Grok skipped local businesses, before/after AEO examples, interactive Q&amp;A, and a free 1-page sample." />
   <meta name="theme-color" content="#070816" />
   <link rel="icon" type="image/svg+xml" href="logo.svg" />
 
@@ -49,6 +49,44 @@
         "https://www.facebook.com/share/1A1FtnaSUa/?mibextid=wwXIfr"
       ],
       "areaServed": "United States, United Kingdom, Canada, Global"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AEO and GEO structure your website copy, direct buyer Q&A blocks, JSON-LD entity schema, and business directory data so ChatGPT, Perplexity, Google Gemini, and Grok can clearly verify and recommend your business when customers ask who to hire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the free 1-page sample work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Before paying for a full 15-prompt audit, you can request a free 1-page sample snapshot showing how AI search engines currently answer a live buyer prompt in your city and where structured Q&A, pricing context, or entity schema is missing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need to redesign our website to get recommended by AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We work with your existing site design—adding clear, extractable buyer Q&A sections, service summaries, and JSON-LD schema markup without changing your visual look."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the $200 audit credit work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The $200 multi-prompt audit is 100% credited toward full implementation if you move forward with rolling out the structured copy, Q&A blocks, and schema fixes."
+          }
+        }
+      ]
     }
   ]
   </script>
@@ -56,9 +94,9 @@
   <style>
     :root {
       --bg: #070816;
-      --surface: rgba(18, 22, 48, 0.86);
-      --surface-2: rgba(29, 25, 66, 0.92);
-      --border: rgba(168, 85, 247, 0.28);
+      --surface: rgba(18, 22, 48, 0.88);
+      --surface-2: rgba(29, 25, 66, 0.94);
+      --border: rgba(168, 85, 247, 0.3);
       --cyan: #00f0ff;
       --violet: #a855f7;
       --emerald: #10b981;
@@ -113,15 +151,21 @@
       50% { filter: drop-shadow(0 0 22px rgba(168, 85, 247, 0.75)); }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .bg-3d-grid, .tilt-stage, .big-logo-img { animation: none !important; }
+      .audit-card, .method-card, .ba-card, .btn, .social-chip { transition: none !important; }
+    }
+
     .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 18px; }
     @media (min-width: 820px) { .container { padding: 0 28px; } }
 
-    /* Header with Big Prominent Logo */
+    /* Header */
     header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(7, 8, 22, 0.88);
+      background: rgba(7, 8, 22, 0.9);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
@@ -133,12 +177,12 @@
       gap: 12px;
     }
     .big-logo-img {
-      height: 56px;
+      height: 54px;
       width: auto;
       display: block;
       animation: pulseGlow 4s ease-in-out infinite;
     }
-    @media (min-width: 820px) { .big-logo-img { height: 64px; } }
+    @media (min-width: 820px) { .big-logo-img { height: 62px; } }
 
     .menu-btn {
       display: inline-flex;
@@ -163,9 +207,9 @@
     .nav-links a {
       color: var(--text);
       text-decoration: none;
-      font-size: 0.96rem;
+      font-size: 0.94rem;
       font-weight: 700;
-      padding: 11px 14px;
+      padding: 10px 13px;
       border-radius: 10px;
     }
     .nav-links a:hover { background: rgba(0, 240, 255, 0.12); color: var(--cyan); }
@@ -176,7 +220,7 @@
       text-align: center;
     }
 
-    @media (min-width: 880px) {
+    @media (min-width: 960px) {
       .menu-btn { display: none; }
       header .container {
         display: flex;
@@ -188,11 +232,11 @@
         display: flex !important;
         flex-direction: row;
         align-items: center;
-        gap: 6px;
+        gap: 4px;
         padding: 0;
         border-top: none;
       }
-      .nav-links a { font-size: 0.89rem; padding: 9px 13px; color: var(--muted); }
+      .nav-links a { font-size: 0.86rem; padding: 9px 11px; color: var(--muted); }
     }
 
     /* Buttons */
@@ -224,11 +268,11 @@
     .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
     @media (min-width: 600px) { .btn { width: auto; } }
 
-    /* Hero with Big 3D Showcase Banner & Tilt Stage */
+    /* Hero */
     .hero { padding: 38px 0 54px; }
     .hero-grid { display: grid; grid-template-columns: 1fr; gap: 34px; align-items: center; }
     @media (min-width: 920px) {
-      .hero { padding: 62px 0 72px; }
+      .hero { padding: 60px 0 70px; }
       .hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 44px; }
     }
 
@@ -248,7 +292,7 @@
       width: auto;
       display: block;
     }
-    @media (min-width: 640px) { .hero-logo-showcase img { height: 78px; } }
+    @media (min-width: 640px) { .hero-logo-showcase img { height: 76px; } }
 
     .hero h1 {
       font-size: clamp(1.9rem, 6.2vw, 3.05rem);
@@ -328,20 +372,86 @@
 
     /* Sections */
     section { padding: 52px 0; border-top: 1px solid var(--border); }
-    @media (min-width: 820px) { section { padding: 68px 0; } }
+    @media (min-width: 820px) { section { padding: 66px 0; } }
     h2 { font-size: clamp(1.5rem, 4.6vw, 2.05rem); font-weight: 900; margin-bottom: 10px; line-height: 1.2; }
-    .lead { color: var(--muted); font-size: 0.98rem; max-width: 720px; margin-bottom: 26px; }
+    .lead { color: var(--muted); font-size: 0.98rem; max-width: 740px; margin-bottom: 26px; }
 
-    /* Searchable Real Audit Vault (Searches AI Did Not Recommend) */
+    /* Methodology Strip */
+    .method-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 640px) { .method-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 960px) { .method-grid { grid-template-columns: repeat(4, 1fr); } }
+    .method-card {
+      background: linear-gradient(150deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .method-card:hover { transform: translateY(-5px); border-color: var(--cyan); }
+    .step-badge {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #050714;
+      background: linear-gradient(90deg, var(--cyan), var(--emerald));
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .method-card h3 { font-size: 1.02rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
+    .method-card p { font-size: 0.88rem; color: var(--muted); }
+
+    /* Before vs. After AEO Rewrite Block */
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 820px) { .ba-grid { grid-template-columns: 1fr 1fr; } }
+    .ba-card {
+      border-radius: 16px;
+      padding: 22px;
+      background: linear-gradient(150deg, var(--surface), var(--surface-2));
+      transition: transform 0.25s ease;
+    }
+    .ba-card:hover { transform: translateY(-4px); }
+    .ba-before { border: 1.5px solid rgba(255, 77, 141, 0.5); }
+    .ba-after { border: 1.5px solid rgba(16, 185, 129, 0.55); }
+    .ba-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 900;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .pill-before { background: rgba(255, 77, 141, 0.16); color: var(--coral); border: 1px solid rgba(255, 77, 141, 0.45); }
+    .pill-after { background: rgba(16, 185, 129, 0.18); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.45); }
+    .ba-quote {
+      background: rgba(7, 8, 22, 0.78);
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      margin-bottom: 12px;
+    }
+    .ba-notes { list-style: none; font-size: 0.86rem; color: var(--muted); }
+    .ba-notes li { padding: 3px 0; }
+
+    /* Searchable Real Audit Vault */
     .vault-controls {
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
       margin-bottom: 20px;
     }
-    @media (min-width: 680px) {
-      .vault-controls { grid-template-columns: 1.4fr 1fr; }
-    }
+    @media (min-width: 680px) { .vault-controls { grid-template-columns: 1.4fr 1fr; } }
     .search-input, .filter-select {
       width: 100%;
       min-height: 48px;
@@ -359,9 +469,7 @@
       grid-template-columns: 1fr;
       gap: 18px;
     }
-    @media (min-width: 760px) {
-      .audit-grid { grid-template-columns: repeat(2, 1fr); }
-    }
+    @media (min-width: 760px) { .audit-grid { grid-template-columns: repeat(2, 1fr); } }
     .audit-card {
       background: linear-gradient(150deg, var(--surface) 0%, var(--surface-2) 100%);
       border: 1px solid var(--border);
@@ -405,7 +513,7 @@
     .audit-result { font-size: 0.88rem; color: var(--muted); }
     .audit-result strong { color: var(--coral); }
 
-    /* Offer Box + Free 1-Page Sample */
+    /* Offer Box + Free 1-Page Sample + What to Send Helper */
     .offer-box {
       background: linear-gradient(145deg, rgba(16, 22, 54, 0.95), rgba(45, 20, 84, 0.92));
       border: 1.5px solid var(--violet);
@@ -421,8 +529,20 @@
     .checklist { list-style: none; margin-top: 14px; }
     .checklist li { display: flex; gap: 10px; padding: 5px 0; font-size: 0.94rem; color: #e2e8f0; }
     .check { color: var(--emerald); font-weight: 900; }
+
+    .sample-helper {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(7, 8, 22, 0.75);
+      border: 1px dashed rgba(0, 240, 255, 0.45);
+      font-size: 0.88rem;
+      color: #e2e8f0;
+    }
+    .sample-helper strong { color: var(--cyan); }
+
     .price-box {
-      background: rgba(7, 8, 22, 0.82);
+      background: rgba(7, 8, 22, 0.84);
       border: 1px solid var(--cyan);
       border-radius: 16px;
       padding: 24px 20px;
@@ -431,19 +551,50 @@
     .price-num { font-size: 2.6rem; font-weight: 900; color: var(--emerald); line-height: 1.1; }
     .price-sub { font-size: 0.86rem; font-weight: 800; color: var(--cyan); margin: 6px 0 12px; }
 
-    /* Q&A Section */
-    .qa-item {
+    /* Interactive Q&A Accordions */
+    details.qa-accordion {
       background: linear-gradient(150deg, var(--surface), var(--surface-2));
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 18px 22px;
       margin-bottom: 14px;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      transition: border-color 0.2s ease;
     }
-    .qa-item:hover { transform: translateX(4px); border-color: var(--cyan); }
-    .qa-item h3 { font-size: 1.02rem; font-weight: 800; color: var(--cyan); margin-bottom: 6px; }
-    .qa-item p { font-size: 0.93rem; color: #e2e8f0; }
+    details.qa-accordion[open], details.qa-accordion:hover {
+      border-color: var(--cyan);
+    }
+    details.qa-accordion summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 22px;
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    details.qa-accordion summary::-webkit-details-marker { display: none; }
+    details.qa-accordion summary::after {
+      content: "+";
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--emerald);
+      line-height: 1;
+    }
+    details.qa-accordion[open] summary::after {
+      content: "−";
+      color: var(--coral);
+    }
+    .qa-body {
+      padding: 0 22px 18px;
+      font-size: 0.94rem;
+      color: #e2e8f0;
+      border-top: 1px solid rgba(168, 85, 247, 0.18);
+      padding-top: 12px;
+    }
 
+    /* Footer & Socials */
     .social-row {
       display: flex;
       flex-wrap: wrap;
@@ -498,6 +649,8 @@
         </button>
       </div>
       <nav class="nav-links" id="navLinks">
+        <a href="#methodology" onclick="closeMenu()">How We Test</a>
+        <a href="#before-after" onclick="closeMenu()">Before &amp; After</a>
         <a href="#unrecommended-searches" onclick="closeMenu()">AI Audit Searches</a>
         <a href="#audit-offer" onclick="closeMenu()">Free Sample &amp; $200 Audit</a>
         <a href="#qa" onclick="closeMenu()">Q&amp;A</a>
@@ -518,7 +671,7 @@
             Even high-trust businesses with strong licenses and 5-star reputations get left out of AI recommendations when buyer Q&amp;A, pricing/timeline facts, and entity schema aren't structured for AI answer engines.
           </p>
           <div class="hero-actions">
-            <a href="mailto:pauladikemere@gmail.com?subject=Request%20Free%201-Page%20AI%20Visibility%20Sample" class="btn btn-neon">Request Free 1-Page Sample</a>
+            <a href="mailto:pauladikemere@gmail.com?subject=Request%20Free%201-Page%20AI%20Visibility%20Sample&body=Business%20Name%3A%0AWebsite%20URL%3A%0ACity%20%26%20Niche%3A%0ATop%201-2%20Customer%20Questions%3A" class="btn btn-neon">Request Free 1-Page Sample</a>
             <a href="#unrecommended-searches" class="btn btn-ghost">See Unrecommended AI Searches</a>
           </div>
         </div>
@@ -549,6 +702,66 @@
               <span class="tag-skip">Skipped</span>
               <span class="tag-boost">Target: #1</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="methodology">
+      <div class="container">
+        <h2>How We Test &amp; Fix AI Visibility</h2>
+        <p class="lead">A repeatable, evidence-backed 4-step workflow that measures where AI engines skip your business and installs extractable trust signals.</p>
+        <div class="method-grid">
+          <div class="method-card">
+            <span class="step-badge">STEP 01</span>
+            <h3>4-Engine Prompt Sweep</h3>
+            <p>We test 15 real buyer prompts across ChatGPT, Perplexity, Google Gemini, and Grok to record exact citations and omissions.</p>
+          </div>
+          <div class="method-card">
+            <span class="step-badge">STEP 02</span>
+            <h3>Competitor Citation Gap</h3>
+            <p>We map which local competitors AI recommends instead and identify the pricing, credential, or service facts they publish.</p>
+          </div>
+          <div class="method-card">
+            <span class="step-badge">STEP 03</span>
+            <h3>Direct-Answer AEO Copy</h3>
+            <p>We write self-contained buyer Q&amp;A blocks, cost/timeline ranges, and service summaries engineered for AI extraction.</p>
+          </div>
+          <div class="method-card">
+            <span class="step-badge">STEP 04</span>
+            <h3>Entity &amp; JSON-LD Alignment</h3>
+            <p>We align NAP/directory records and deploy clean LocalBusiness &amp; FAQPage JSON-LD schema without changing your visual layout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="before-after">
+      <div class="container">
+        <h2>Before vs. After: Why AI Skips Generic Copy</h2>
+        <p class="lead">AI answer engines favor direct, self-contained facts over vague marketing slogans. Here is how we restructure a service page section.</p>
+        <div class="ba-grid">
+          <div class="ba-card ba-before">
+            <span class="ba-pill pill-before">BEFORE — SKIPPED BY AI ENGINES</span>
+            <div class="ba-quote">
+              "Welcome to our premier remodeling company! With years of dedication and quality craftsmanship, we turn your dream home into reality. Contact us today for a consultation."
+            </div>
+            <ul class="ba-notes">
+              <li>&#10007; No city/neighborhood service-area specificity</li>
+              <li>&#10007; No typical project cost ranges, timelines, or permitting facts</li>
+              <li>&#10007; Missing license verification and structured Q&amp;A headings</li>
+            </ul>
+          </div>
+          <div class="ba-card ba-after">
+            <span class="ba-pill pill-after">AFTER — ENGINEERED FOR AI CITATION</span>
+            <div class="ba-quote">
+              "<strong>How much does a kitchen remodel cost in Woodland Hills, CA?</strong> A licensed full kitchen remodel in Woodland Hills typically ranges from $45,000 to $95,000+ and takes 6–10 weeks including LA City permitting, structural updates, and cabinetry."
+            </div>
+            <ul class="ba-notes">
+              <li>&#10003; Question heading matches natural buyer prompts</li>
+              <li>&#10003; First sentence gives a direct, quotable answer with real numbers</li>
+              <li>&#10003; Backed by matching LocalBusiness &amp; FAQPage JSON-LD schema</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -594,6 +807,9 @@
               <li><span class="check">&#10003;</span> Custom AI-ready service summary &amp; Q&amp;A copy for your business</li>
               <li><span class="check">&#10003;</span> Ready-to-deploy LocalBusiness &amp; FAQPage JSON-LD schema</li>
             </ul>
+            <div class="sample-helper">
+              <strong>What to send for your Free 1-Page Sample:</strong> Just email your <em>Business Name</em>, <em>Website URL</em>, <em>City &amp; Niche</em>, and <em>1–2 questions customers ask before hiring</em>.
+            </div>
           </div>
           <div class="price-box">
             <div class="price-num">$200</div>
@@ -601,7 +817,7 @@
             <p style="color: var(--muted); font-size: 0.88rem; margin-bottom: 14px;">
               Free 1-Page Sample available before committing to the full audit.
             </p>
-            <a href="mailto:pauladikemere@gmail.com?subject=Request%20Free%201-Page%20AI%20Visibility%20Sample" class="btn btn-neon" style="width: 100%; margin-bottom: 10px;">Claim Free 1-Page Sample</a>
+            <a href="mailto:pauladikemere@gmail.com?subject=Request%20Free%201-Page%20AI%20Visibility%20Sample&body=Business%20Name%3A%0AWebsite%20URL%3A%0ACity%20%26%20Niche%3A%0ATop%201-2%20Customer%20Questions%3A" class="btn btn-neon" style="width: 100%; margin-bottom: 10px;">Claim Free 1-Page Sample</a>
             <a href="audit.html" class="btn btn-ghost" style="width: 100%;">Open 1-Click Audit Launcher</a>
           </div>
         </div>
@@ -611,27 +827,35 @@
     <section id="qa">
       <div class="container">
         <h2>Questions &amp; Answers (Q&amp;A)</h2>
-        <p class="lead">Straight answers on how AEO &amp; GEO visibility works and how we structure your presence for AI search engines.</p>
+        <p class="lead">Click any question below to expand straight answers on how AEO &amp; GEO visibility works.</p>
 
-        <div class="qa-item">
-          <h3>Q: What is Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO)?</h3>
-          <p>AEO and GEO structure your website copy, buyer Q&amp;A blocks, schema markup, and business directory data so ChatGPT, Perplexity, Google Gemini, and Grok can clearly verify and recommend your business when customers ask who to hire.</p>
-        </div>
+        <details class="qa-accordion" open>
+          <summary>Q: What is Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO)?</summary>
+          <div class="qa-body">
+            AEO and GEO structure your website copy, direct buyer Q&amp;A blocks, JSON-LD entity schema, and business directory data so ChatGPT, Perplexity, Google Gemini, and Grok can clearly verify and recommend your business when customers ask who to hire.
+          </div>
+        </details>
 
-        <div class="qa-item">
-          <h3>Q: How does the free 1-page sample work?</h3>
-          <p>Before paying for a full 15-prompt audit, you can request a free 1-page sample snapshot showing how AI search engines currently answer a real buyer question in your city and where structured Q&amp;A or schema is missing.</p>
-        </div>
+        <details class="qa-accordion">
+          <summary>Q: How does the free 1-page sample work?</summary>
+          <div class="qa-body">
+            Before paying for a full 15-prompt audit, you can request a free 1-page sample snapshot showing how AI search engines currently answer a live buyer prompt in your city and where structured Q&amp;A, pricing context, or entity schema is missing.
+          </div>
+        </details>
 
-        <div class="qa-item">
-          <h3>Q: Do we need to redesign our website to get recommended by AI?</h3>
-          <p>No. We work with your existing site design—adding clear, extractable buyer Q&amp;A sections, service summaries, and JSON-LD schema markup without changing your visual look.</p>
-        </div>
+        <details class="qa-accordion">
+          <summary>Q: Do we need to redesign our website to get recommended by AI?</summary>
+          <div class="qa-body">
+            No. We work with your existing site design—adding clear, extractable buyer Q&amp;A sections, service summaries, and JSON-LD schema markup without changing your visual look.
+          </div>
+        </details>
 
-        <div class="qa-item">
-          <h3>Q: How does the $200 audit credit work?</h3>
-          <p>The $200 multi-prompt audit is 100% credited toward full implementation if you move forward with rolling out the structured copy, Q&amp;A blocks, and schema fixes.</p>
-        </div>
+        <details class="qa-accordion">
+          <summary>Q: How does the $200 audit credit work?</summary>
+          <div class="qa-body">
+            The $200 multi-prompt audit is 100% credited toward full implementation if you move forward with rolling out the structured copy, Q&amp;A blocks, and schema fixes.
+          </div>
+        </details>
       </div>
     </section>
   </main>
@@ -661,7 +885,8 @@
     }
 
     const tiltStage = document.getElementById('tiltStage');
-    if (tiltStage && window.matchMedia('(pointer: fine)').matches) {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (tiltStage && !prefersReduced && window.matchMedia('(pointer: fine)').matches) {
       tiltStage.addEventListener('mousemove', (e) => {
         const rect = tiltStage.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
