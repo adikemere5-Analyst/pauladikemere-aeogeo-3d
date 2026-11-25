@@ -1,41 +1,29 @@
-Paul Adikemere O. — 3D AEO & GEO Visibility Lab
+# Paul Adikemere O. — 3D AEO & GEO Visibility Lab
 
-A mobile-first, 3D-styled Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) consulting hub and 1-Click AI Visibility Audit Launcher engineered for ChatGPT, Perplexity, Google Gemini, and Grok.
+Personal branding hub and AI visibility audit showcase by **Paul Adikemere O. (Paul Adikemere Onyekachi)** focused on **Answer Engine Optimization (AEO)** and **Generative Engine Optimization (GEO)** across ChatGPT, Perplexity, Google Gemini, and Grok.
 
-Live Assets
+- **Live Showcase:** https://adikemere5-analyst.github.io/pauladikemere-aeogeo-3d/
+- **1-Click Audit Launcher:** https://adikemere5-analyst.github.io/pauladikemere-aeogeo-3d/audit.html
+- **Contact:** pauladikemere@gmail.com
 
-3D Consulting Showcase: https://adikemere5-analyst.github.io/pauladikemere-aeogeo-3d/
+## Pricing & Packages
 
-1-Click AI Audit Launcher: https://adikemere5-analyst.github.io/pauladikemere-aeogeo-3d/audit.html
+| Tier | Price | Key Details |
+| :--- | :--- | :--- |
+| **Free 1-Page Sample** | **$0** | Live buyer prompt snapshot in your market showing where Q&A, pricing context, or schema is missing |
+| **Full Multi-Prompt AI Audit** | **$200** | 48-hour audit across 15 buyer prompts (ChatGPT, Perplexity, Gemini & Grok), competitor citation breakdown, custom AEO copy, and JSON-LD schema — **100% credited toward implementation** |
+| **AI-Ready Implementation** | **Custom** | Full rollout of direct-answer Q&A blocks, service summaries, entity alignment, and LocalBusiness & FAQPage schema ($200 audit fee applied 100% as credit) |
 
-Brand Logo Asset: logo.svg
+## What's Inside the Repository
 
-What's Inside
+- `index.html` — 3D AEO & GEO visibility showcase with transparent pricing tiers, 4-step testing methodology, Before vs. After copy comparison, searchable real unrecommended AI search vault (5 audited cases), expandable Q&A accordions, and JSON-LD structured data (`Person`, `ProfessionalService` with offers, and `FAQPage`).
+- `audit.html` — Interactive 1-Click AI Visibility Audit Launcher with case presets, custom city/service inputs, clipboard copy, and direct launch links for ChatGPT, Perplexity, Gemini, and Grok.
+- `logo.svg` — Faceted 3D signal crest & wordmark for **Paul Adikemere O. — AEO & GEO Visibility Lab**.
+- `README.md` — Repository overview, pricing table, and social entity links.
 
-logo.svg: Custom 3D faceted diamond/signal crest with a glowing answer core, neon cyan/violet/emerald gradients, and crisp PAUL ADIKEMERE O. (AEO & GEO VISIBILITY LAB) wordmark.
+## Social Profiles
 
-index.html:
-
-3D Visuals & Interactive Tilt: Drifting 3D perspective grid floor, pulsing neon emblem, and pointer-reactive 3D Citation Radar card (with prefers-reduced-motion accessibility support).
-
-4-Step Methodology & Before/After AEO Proof: Breaks down the 4-engine prompt sweep and contrasts vague brochure copy against structured, quotable buyer Q&A blocks.
-
-Searchable "AI Unrecommended" Vault: Live search and niche filter featuring real audited businesses skipped by AI answer engines (5 Stars Home Remodeling Inc., Shulmen Construction LA, AP Remodeling Inc., Luxe Dental Cosmetics, and Rancho Bernardo Cosmetic & Family Dental Care).
-
-Free 1-Page Sample & $200 Audit Offer: Pre-filled sample request helper ("What to send") alongside the $200 multi-prompt audit offer (100% credited toward implementation).
-
-Interactive Q&A Accordions & Synchronized Schema: Expandable <details> Q&A sections paired with Person, ProfessionalService, and FAQPage JSON-LD structured data for entity and answer-engine authority.
-
-audit.html: Clean, mobile-ready 1-Click AI Visibility Audit Launcher with audited presets and instant prompt launch links for ChatGPT, Perplexity, Google Gemini, and Grok.
-
-Connect & Entity Profiles
-
-Email: pauladikemere@gmail.com
-
-LinkedIn: Paul Adikemere
-
-YouTube: @pauladikemere
-
-TikTok: @adikemere_paul
-
-Facebook: Paul Adikemere
+- **LinkedIn:** https://www.linkedin.com/in/paul-adikemere-439041137/
+- **YouTube:** https://youtube.com/@pauladikemere?si=AJsvOseAAatMHbAA
+- **TikTok:** https://www.tiktok.com/@adikemere_paul
+- **Facebook:** https://www.facebook.com/share/1A1FtnaSUa/?mibextid=wwXIfr

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Paul Adikemere O. | 3D AEO &amp; GEO Visibility Showcase</title>
-  <meta name="description" content="Paul Adikemere O. — Bold 3D AEO &amp; GEO Visibility showcase featuring real AI search audit cases where ChatGPT, Perplexity, Gemini, and Grok skipped local businesses, before/after AEO examples, interactive Q&amp;A, and a free 1-page sample." />
+  <title>Paul Adikemere O. | 3D AEO &amp; GEO Visibility Showcase &amp; Pricing</title>
+  <meta name="description" content="Paul Adikemere O. — Bold 3D AEO &amp; GEO Visibility showcase and transparent pricing: Free 1-Page Sample, $200 Multi-Prompt AI Visibility Audit (100% credited), and Custom Implementation." />
   <meta name="theme-color" content="#070816" />
   <link rel="icon" type="image/svg+xml" href="logo.svg" />
 
@@ -48,7 +48,37 @@
         "https://www.tiktok.com/@adikemere_paul",
         "https://www.facebook.com/share/1A1FtnaSUa/?mibextid=wwXIfr"
       ],
-      "areaServed": "United States, United Kingdom, Canada, Global"
+      "areaServed": "United States, United Kingdom, Canada, Global",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AEO & GEO Visibility Packages",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Free 1-Page AI Visibility Sample",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Free 1-page sample snapshot showing how AI search engines answer a live buyer prompt in your city and where structured Q&A or schema is missing."
+          },
+          {
+            "@type": "Offer",
+            "name": "Full Multi-Prompt AI Visibility Audit",
+            "price": "200",
+            "priceCurrency": "USD",
+            "description": "48-hour audit across 15 buyer prompts on ChatGPT, Perplexity, Gemini & Grok, competitor citation gap analysis, custom AEO copy, and JSON-LD schema. 100% credited toward implementation."
+          },
+          {
+            "@type": "Offer",
+            "name": "Custom AI-Ready Implementation",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "USD",
+              "description": "Custom quote after audit ($200 audit fee 100% credited)"
+            },
+            "description": "Full rollout of structured buyer Q&A blocks, AI-ready service summaries, entity alignment, and LocalBusiness & FAQPage JSON-LD schema."
+          }
+        ]
+      }
     },
     {
       "@context": "https://schema.org",
@@ -121,7 +151,6 @@
       perspective: 1200px;
     }
 
-    /* Animated 3D Perspective Grid Floor */
     .bg-3d-grid {
       position: fixed;
       inset: 0;
@@ -154,13 +183,12 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .bg-3d-grid, .tilt-stage, .big-logo-img { animation: none !important; }
-      .audit-card, .method-card, .ba-card, .btn, .social-chip { transition: none !important; }
+      .audit-card, .method-card, .ba-card, .pricing-card, .btn, .social-chip { transition: none !important; }
     }
 
     .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 18px; }
     @media (min-width: 820px) { .container { padding: 0 28px; } }
 
-    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -220,7 +248,7 @@
       text-align: center;
     }
 
-    @media (min-width: 960px) {
+    @media (min-width: 980px) {
       .menu-btn { display: none; }
       header .container {
         display: flex;
@@ -236,10 +264,9 @@
         padding: 0;
         border-top: none;
       }
-      .nav-links a { font-size: 0.86rem; padding: 9px 11px; color: var(--muted); }
+      .nav-links a { font-size: 0.85rem; padding: 9px 10px; color: var(--muted); }
     }
 
-    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -268,7 +295,6 @@
     .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
     @media (min-width: 600px) { .btn { width: auto; } }
 
-    /* Hero */
     .hero { padding: 38px 0 54px; }
     .hero-grid { display: grid; grid-template-columns: 1fr; gap: 34px; align-items: center; }
     @media (min-width: 920px) {
@@ -310,7 +336,6 @@
     .hero-actions { display: flex; flex-direction: column; gap: 12px; }
     @media (min-width: 600px) { .hero-actions { flex-direction: row; flex-wrap: wrap; } }
 
-    /* Interactive 3D Tilt Stage Card */
     .tilt-stage {
       transform-style: preserve-3d;
       transition: transform 0.18s ease-out;
@@ -370,13 +395,63 @@
       white-space: nowrap;
     }
 
-    /* Sections */
     section { padding: 52px 0; border-top: 1px solid var(--border); }
     @media (min-width: 820px) { section { padding: 66px 0; } }
     h2 { font-size: clamp(1.5rem, 4.6vw, 2.05rem); font-weight: 900; margin-bottom: 10px; line-height: 1.2; }
     .lead { color: var(--muted); font-size: 0.98rem; max-width: 740px; margin-bottom: 26px; }
 
-    /* Methodology Strip */
+    /* Transparent 3-Tier Pricing Grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+    @media (min-width: 880px) {
+      .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .pricing-card {
+      background: linear-gradient(150deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--cyan);
+      box-shadow: 0 18px 36px -14px rgba(0, 240, 255, 0.24);
+    }
+    .pricing-card.featured {
+      border: 1.5px solid var(--cyan);
+      box-shadow: 0 22px 48px -14px rgba(0, 240, 255, 0.28);
+    }
+    .tier-label {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+    .tier-title { font-size: 1.2rem; font-weight: 900; color: #ffffff; margin-bottom: 8px; }
+    .tier-price { font-size: 2.35rem; font-weight: 900; color: var(--emerald); line-height: 1.1; }
+    .tier-price span { font-size: 0.88rem; font-weight: 700; color: var(--muted); }
+    .tier-note { font-size: 0.85rem; font-weight: 700; color: var(--cyan); margin: 8px 0 14px; }
+    .tier-list { list-style: none; margin-bottom: 20px; }
+    .tier-list li {
+      display: flex;
+      gap: 8px;
+      padding: 5px 0;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+    }
+    .check { color: var(--emerald); font-weight: 900; }
+
     .method-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -406,7 +481,6 @@
     .method-card h3 { font-size: 1.02rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
     .method-card p { font-size: 0.88rem; color: var(--muted); }
 
-    /* Before vs. After AEO Rewrite Block */
     .ba-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -444,7 +518,6 @@
     .ba-notes { list-style: none; font-size: 0.86rem; color: var(--muted); }
     .ba-notes li { padding: 3px 0; }
 
-    /* Searchable Real Audit Vault */
     .vault-controls {
       display: grid;
       grid-template-columns: 1fr;
@@ -513,25 +586,8 @@
     .audit-result { font-size: 0.88rem; color: var(--muted); }
     .audit-result strong { color: var(--coral); }
 
-    /* Offer Box + Free 1-Page Sample + What to Send Helper */
-    .offer-box {
-      background: linear-gradient(145deg, rgba(16, 22, 54, 0.95), rgba(45, 20, 84, 0.92));
-      border: 1.5px solid var(--violet);
-      border-radius: 18px;
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-    @media (min-width: 840px) {
-      .offer-box { grid-template-columns: 1.35fr 0.95fr; padding: 36px; align-items: center; }
-    }
-    .checklist { list-style: none; margin-top: 14px; }
-    .checklist li { display: flex; gap: 10px; padding: 5px 0; font-size: 0.94rem; color: #e2e8f0; }
-    .check { color: var(--emerald); font-weight: 900; }
-
     .sample-helper {
-      margin-top: 18px;
+      margin-top: 20px;
       padding: 14px 16px;
       border-radius: 12px;
       background: rgba(7, 8, 22, 0.75);
@@ -541,17 +597,6 @@
     }
     .sample-helper strong { color: var(--cyan); }
 
-    .price-box {
-      background: rgba(7, 8, 22, 0.84);
-      border: 1px solid var(--cyan);
-      border-radius: 16px;
-      padding: 24px 20px;
-      text-align: center;
-    }
-    .price-num { font-size: 2.6rem; font-weight: 900; color: var(--emerald); line-height: 1.1; }
-    .price-sub { font-size: 0.86rem; font-weight: 800; color: var(--cyan); margin: 6px 0 12px; }
-
-    /* Interactive Q&A Accordions */
     details.qa-accordion {
       background: linear-gradient(150deg, var(--surface), var(--surface-2));
       border: 1px solid var(--border);
@@ -594,7 +639,6 @@
       padding-top: 12px;
     }
 
-    /* Footer & Socials */
     .social-row {
       display: flex;
       flex-wrap: wrap;
@@ -649,10 +693,10 @@
         </button>
       </div>
       <nav class="nav-links" id="navLinks">
+        <a href="#pricing" onclick="closeMenu()">Pricing</a>
         <a href="#methodology" onclick="closeMenu()">How We Test</a>
         <a href="#before-after" onclick="closeMenu()">Before &amp; After</a>
         <a href="#unrecommended-searches" onclick="closeMenu()">AI Audit Searches</a>
-        <a href="#audit-offer" onclick="closeMenu()">Free Sample &amp; $200 Audit</a>
         <a href="#qa" onclick="closeMenu()">Q&amp;A</a>
         <a href="audit.html" class="nav-pill" onclick="closeMenu()">1-Click Audit Launcher</a>
       </nav>
@@ -671,8 +715,8 @@
             Even high-trust businesses with strong licenses and 5-star reputations get left out of AI recommendations when buyer Q&amp;A, pricing/timeline facts, and entity schema aren't structured for AI answer engines.
           </p>
           <div class="hero-actions">
-            <a href="mailto:pauladikemere@gmail.com?subject=Request%20Free%201-Page%20AI%20Visibility%20Sample&body=Business%20Name%3A%0AWebsite%20URL%3A%0ACity%20%26%20Niche%3A%0ATop%201-2%20Customer%20Questions%3A" class="btn btn-neon">Request Free 1-Page Sample</a>
-            <a href="#unrecommended-searches" class="btn btn-ghost">See Unrecommended AI Searches</a>
+            <a href="mailto:pauladikemere@gmail.com?subject=Request%20Free%201-Page%20AI%20Visibility%20Sample&body=Business%20Name%3A%0AWebsite%20URL%3A%0ACity%20%26%20Niche%3A%0ATop%201-2%20Customer%20Questions%3A" class="btn btn-neon">Request Free 1-Page Sample ($0)</a>
+            <a href="#pricing" class="btn btn-ghost">View Pricing &amp; Packages</a>
           </div>
         </div>
 
@@ -703,6 +747,66 @@
               <span class="tag-boost">Target: #1</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <h2>Transparent AEO &amp; GEO Pricing</h2>
+        <p class="lead">Start with a free 1-page sample, move to a full 15-prompt audit for $200 (100% credited toward implementation), or roll out structured AI-ready copy and schema.</p>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <div>
+              <span class="tier-label">Step 1 • Preview</span>
+              <h3 class="tier-title">Free 1-Page Sample</h3>
+              <div class="tier-price">$0 <span>/ sample</span></div>
+              <div class="tier-note">No obligation before full audit</div>
+              <ul class="tier-list">
+                <li><span class="check">&#10003;</span> Live buyer prompt snapshot in your market</li>
+                <li><span class="check">&#10003;</span> Spots missing Q&amp;A, pricing context, or schema</li>
+                <li><span class="check">&#10003;</span> Fast proof of current AI visibility gap</li>
+              </ul>
+            </div>
+            <a href="mailto:pauladikemere@gmail.com?subject=Request%20Free%201-Page%20AI%20Visibility%20Sample&body=Business%20Name%3A%0AWebsite%20URL%3A%0ACity%20%26%20Niche%3A%0ATop%201-2%20Customer%20Questions%3A" class="btn btn-ghost" style="width: 100%;">Claim Free 1-Page Sample</a>
+          </article>
+
+          <article class="pricing-card featured">
+            <div>
+              <span class="tier-label">Step 2 • Most Popular Audit</span>
+              <h3 class="tier-title">Full Multi-Prompt AI Audit</h3>
+              <div class="tier-price">$200 <span>/ one-time</span></div>
+              <div class="tier-note">100% Credited Toward Implementation</div>
+              <ul class="tier-list">
+                <li><span class="check">&#10003;</span> 15 buyer prompts across ChatGPT, Perplexity, Gemini &amp; Grok</li>
+                <li><span class="check">&#10003;</span> Competitor citation gap breakdown</li>
+                <li><span class="check">&#10003;</span> Custom AI-ready service summary &amp; Q&amp;A copy</li>
+                <li><span class="check">&#10003;</span> Ready-to-deploy LocalBusiness &amp; FAQPage JSON-LD</li>
+              </ul>
+            </div>
+            <a href="mailto:pauladikemere@gmail.com?subject=Book%20%24200%20Full%20Multi-Prompt%20AI%20Visibility%20Audit&body=Business%20Name%3A%0AWebsite%20URL%3A%0ACity%20%26%20Niche%3A%0A" class="btn btn-neon" style="width: 100%;">Book $200 Full Audit</a>
+          </article>
+
+          <article class="pricing-card">
+            <div>
+              <span class="tier-label">Step 3 • Rollout</span>
+              <h3 class="tier-title">AI-Ready Implementation</h3>
+              <div class="tier-price">Custom <span>/ scope</span></div>
+              <div class="tier-note">$200 audit fee applied 100% as credit</div>
+              <ul class="tier-list">
+                <li><span class="check">&#10003;</span> Full direct-answer Q&amp;A &amp; service page blocks</li>
+                <li><span class="check">&#10003;</span> Entity &amp; directory consistency alignment</li>
+                <li><span class="check">&#10003;</span> Production JSON-LD schema implementation</li>
+                <li><span class="check">&#10003;</span> Works with your existing website design</li>
+              </ul>
+            </div>
+            <a href="mailto:pauladikemere@gmail.com?subject=Custom%20AI-Ready%20Implementation%20Quote&body=Business%20Name%3A%0AWebsite%20URL%3A%0ACity%20%26%20Niche%3A%0A" class="btn btn-ghost" style="width: 100%;">Request Implementation Quote</a>
+          </article>
+        </div>
+
+        <div class="sample-helper">
+          <strong>What to send to get started:</strong> Email <em>Business Name</em>, <em>Website URL</em>, <em>City &amp; Niche</em>, and <em>1–2 questions customers ask before hiring</em> to <a href="mailto:pauladikemere@gmail.com">pauladikemere@gmail.com</a>, or test live prompts right now in the <a href="audit.html">1-Click Audit Launcher</a>.
         </div>
       </div>
     </section>
@@ -793,41 +897,10 @@
       </div>
     </section>
 
-    <section id="audit-offer">
-      <div class="container">
-        <div class="offer-box">
-          <div>
-            <h2>Full Multi-Prompt AI Visibility Audit &amp; Blueprint</h2>
-            <p style="color: #e2e8f0; margin-top: 8px; font-size: 0.96rem;">
-              Want to see the gap first? Start with a <strong>free 1-page sample</strong> showing how AI currently answers a live buyer prompt in your market—or unlock the complete 48-hour audit blueprint:
-            </p>
-            <ul class="checklist">
-              <li><span class="check">&#10003;</span> 15 buyer prompts tested across ChatGPT, Perplexity, Gemini &amp; Grok</li>
-              <li><span class="check">&#10003;</span> Competitor citation breakdown showing who AI recommends instead</li>
-              <li><span class="check">&#10003;</span> Custom AI-ready service summary &amp; Q&amp;A copy for your business</li>
-              <li><span class="check">&#10003;</span> Ready-to-deploy LocalBusiness &amp; FAQPage JSON-LD schema</li>
-            </ul>
-            <div class="sample-helper">
-              <strong>What to send for your Free 1-Page Sample:</strong> Just email your <em>Business Name</em>, <em>Website URL</em>, <em>City &amp; Niche</em>, and <em>1–2 questions customers ask before hiring</em>.
-            </div>
-          </div>
-          <div class="price-box">
-            <div class="price-num">$200</div>
-            <div class="price-sub">100% Credited Toward Implementation</div>
-            <p style="color: var(--muted); font-size: 0.88rem; margin-bottom: 14px;">
-              Free 1-Page Sample available before committing to the full audit.
-            </p>
-            <a href="mailto:pauladikemere@gmail.com?subject=Request%20Free%201-Page%20AI%20Visibility%20Sample&body=Business%20Name%3A%0AWebsite%20URL%3A%0ACity%20%26%20Niche%3A%0ATop%201-2%20Customer%20Questions%3A" class="btn btn-neon" style="width: 100%; margin-bottom: 10px;">Claim Free 1-Page Sample</a>
-            <a href="audit.html" class="btn btn-ghost" style="width: 100%;">Open 1-Click Audit Launcher</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="qa">
       <div class="container">
         <h2>Questions &amp; Answers (Q&amp;A)</h2>
-        <p class="lead">Click any question below to expand straight answers on how AEO &amp; GEO visibility works.</p>
+        <p class="lead">Click any question below to expand straight answers on how AEO &amp; GEO visibility and pricing work.</p>
 
         <details class="qa-accordion" open>
           <summary>Q: What is Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO)?</summary>
