@@ -1,38 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" width="540" height="120" role="img" aria-label="Paul Adikemere O. — AEO &amp; GEO Visibility Lab">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Paul Adikemere O. — AEO &amp; GEO Visibility Lab">
   <defs>
-    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" />
-      <stop offset="52%" stop-color="#a855f7" />
-      <stop offset="100%" stop-color="#10b981" />
+    
+    <linearGradient id="brandGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.8" />
+      <stop offset="52%" stop-color="#a855f7" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.8" />
     </linearGradient>
-    <linearGradient id="cubeFace" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#141b3d" />
-      <stop offset="100%" stop-color="#2b1759" />
+
+    
+    <linearGradient id="facetDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101433" />
+      <stop offset="100%" stop-color="#251252" />
     </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
+
+    
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#00f0ff" stop-opacity="1" />
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0" />
+    </linearGradient>
+
+    
+    <linearGradient id="outBeamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="1" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="1" />
+    </linearGradient>
+
+    
+    <filter id="sharpGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="coloredBlur" />
       <feMerge>
-        <feMergeNode in="blur" />
+        <feMergeNode in="coloredBlur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
   </defs>
 
   
-  <g transform="translate(14, 14)" filter="url(#glow)">
-    <polygon points="46,6 84,26 46,46 8,26" fill="#00f0ff" fill-opacity="0.22" stroke="url(#neonGrad)" stroke-width="2.5" stroke-linejoin="round" />
-    <polygon points="8,26 46,46 46,88 8,68" fill="url(#cubeFace)" stroke="#00f0ff" stroke-width="2.2" stroke-linejoin="round" />
-    <polygon points="84,26 46,46 46,88 84,68" fill="#181238" stroke="#a855f7" stroke-width="2.2" stroke-linejoin="round" />
-    <circle cx="46" cy="46" r="8" fill="#10b981" />
-    <circle cx="46" cy="46" r="3.5" fill="#070816" />
+  <rect x="-20" y="46" width="70" height="7" fill="url(#beamGrad)" transform="rotate(-14, 15, 49.5)" opacity="0.7" />
+
+  
+  <g transform="translate(32, 14)" filter="url(#sharpGlow)">
+    
+    <path d="M5.6 3.8L48.5 22.6V68.8L5.6 50V3.8Z" fill="url(#facetDark)" stroke="#a855f7" stroke-width="1.5" />
+    
+    
+    <path d="M48.5 22.6L91.4 3.8V50L48.5 68.8V22.6Z" fill="#090c24" stroke="#00f0ff" stroke-width="1.5" />
+    
+    
+    <polygon points="5,3.8 48,22.6 91.4,3.8 48,-15" fill="#181b40" stroke="#10b981" stroke-width="1.5" />
+
+    
+    <path d="M46.5 33.2L50.5 31.5V67.5L46.5 69.2V33.2Z" fill="rgba(0, 240, 255, 0.3)" />
   </g>
 
   
-  <text x="116" y="54" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Inter, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.5">
-    PAUL ADIKEMERE O.
-  </text>
-  <text x="117" y="83" fill="url(#neonGrad)" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Inter, sans-serif" font-size="14.5" font-weight="800" letter-spacing="1.6">
-    AEO &amp; GEO VISIBILITY LAB
-  </text>
-  <rect x="117" y="93" width="168" height="3" rx="1.5" fill="url(#neonGrad)" />
+  
+  <path d="M120 52L156 36" stroke="url(#outBeamGrad)" stroke-width="4" stroke-linecap="round" opacity="0.8" filter="url(#sharpGlow)" />
+  
+  <path d="M120 74L156 90" stroke="url(#outBeamGrad)" stroke-width="4" stroke-linecap="round" opacity="0.8" filter="url(#sharpGlow)" />
+
+
+  
+  <g transform="translate(164, 58)">
+    <text x="0" y="0" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Inter, sans-serif" font-size="34" font-weight="900" letter-spacing="-1.1">
+      PAUL ADIKEMERE O.
+    </text>
+    <text x="3" y="25" fill="url(#brandGlow)" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Inter, sans-serif" font-size="18" font-weight="800" letter-spacing="2.1">
+      AEO &amp; GEO VISIBILITY LAB
+    </text>
+  </g>
+
+  
+  <rect x="167" y="95" width="198" height="4" rx="2" fill="url(#brandGlow)" opacity="0.6" />
 </svg>
