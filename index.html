@@ -65,7 +65,7 @@
             "name": "Full Multi-Prompt AI Visibility Audit",
             "price": "200",
             "priceCurrency": "USD",
-            "description": "48-hour audit across 15 buyer prompts on ChatGPT, Perplexity, Gemini & Grok, competitor citation gap analysis, custom AEO copy, and JSON-LD schema. 100% credited toward implementation."
+            "description": "48-hour audit across 15 buyer prompts on ChatGPT, Perplexity, Gemini, Grok & Claude, competitor citation gap analysis, custom AEO copy, and JSON-LD schema. 100% credited toward implementation."
           },
           {
             "@type": "Offer",
@@ -89,7 +89,7 @@
           "name": "What is Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AEO and GEO structure your website copy, direct buyer Q&A blocks, JSON-LD entity schema, and business directory data so ChatGPT, Perplexity, Google Gemini, and Grok can clearly verify and recommend your business when customers ask who to hire."
+            "text": "AEO and GEO structure your website copy, direct buyer Q&A blocks, JSON-LD entity schema, and business directory data so ChatGPT, Perplexity, Google Gemini, Grok, and Claude can clearly verify and recommend your business when customers ask who to hire."
           }
         },
         {
@@ -260,11 +260,11 @@
         display: flex !important;
         flex-direction: row;
         align-items: center;
-        gap: 4px;
+        gap: 2px;
+        flex-wrap: nowrap;
         padding: 0;
         border-top: none;
       }
-      .nav-links { gap: 2px; flex-wrap: nowrap; }
       .nav-links a { font-size: 0.82rem; padding: 8px 9px; color: var(--muted); white-space: nowrap; }
     }
 
@@ -399,10 +399,8 @@
     }
 
     section { padding: 52px 0; border-top: 1px solid var(--border); }
-    @media (min-width: 820px) { section { padding: 52px 0; } }
     h2 { font-size: clamp(1.5rem, 4.6vw, 2.05rem); font-weight: 900; margin-bottom: 10px; line-height: 1.2; }
     .lead { color: var(--muted); font-size: 0.98rem; max-width: 740px; margin-bottom: 26px; }
-
 
     .about-grid {
       display: grid;
@@ -461,7 +459,6 @@
       color: var(--muted);
     }
 
-    /* Transparent 3-Tier Pricing Grid */
     .pricing-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -783,12 +780,12 @@
         </button>
       </div>
       <nav class="nav-links" id="navLinks">
-        <a href="#about-aeo-geo" onclick="closeMenu()">About &amp; GEO/AEO</a>
         <a href="#pricing" onclick="closeMenu()">Pricing</a>
         <a href="#methodology" onclick="closeMenu()">How We Test</a>
         <a href="#before-after" onclick="closeMenu()">Before &amp; After</a>
         <a href="#unrecommended-searches" onclick="closeMenu()">Audit Searches</a>
         <a href="#qa" onclick="closeMenu()">Q&amp;A</a>
+        <a href="#about-aeo-geo" onclick="closeMenu()">About &amp; GEO/AEO</a>
         <a href="audit.html" class="nav-pill" onclick="closeMenu()">1-Click Audit Launcher</a>
       </nav>
     </div>
@@ -801,7 +798,7 @@
           <div class="hero-logo-showcase">
             <img src="logo.svg" alt="Paul Adikemere O. — AEO & GEO Visibility Lab" />
           </div>
-          <h1>Dominate <span class="rainbow-text">ChatGPT, Perplexity, Gemini &amp; Grok</span></h1>
+          <h1>Dominate <span class="rainbow-text">ChatGPT, Perplexity, Gemini, Grok &amp; Claude</span></h1>
           <p>
             Even high-trust businesses with strong licenses and 5-star reputations get left out of AI recommendations when buyer Q&amp;A, pricing/timeline facts, and entity schema aren't structured for AI answer engines.
           </p>
@@ -832,57 +829,17 @@
               <span class="tag-skip">Skipped / Partial</span>
               <span class="tag-boost">Target: #1</span>
             </div>
-            <div class="ai-tile" style="margin-bottom: 0;">
+            <div class="ai-tile">
               <span>Grok</span>
               <span class="tag-skip">Skipped</span>
               <span class="tag-boost">Target: #1</span>
             </div>
+            <div class="ai-tile" style="margin-bottom: 0;">
+              <span>Claude</span>
+              <span class="tag-skip">Skipped</span>
+              <span class="tag-boost">Target: #1</span>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about-aeo-geo">
-      <div class="container">
-        <h2>Who We Are &amp; What GEO / AEO Means (Made Simple)</h2>
-        <p class="lead">Meet the lab behind the audits and see in plain English how AI answer engines choose which businesses to recommend.</p>
-
-        <div class="about-grid">
-          <article class="about-card">
-            <span class="tier-label">Who We Are</span>
-            <h3>Paul Adikemere O. — AEO &amp; GEO Visibility Lab</h3>
-            <p>
-              Led by <strong>Paul Adikemere O. (Paul Adikemere Onyekachi)</strong>, we help businesses get noticed and recommended inside AI answers—not just traditional blue search links.
-            </p>
-            <p style="color: var(--muted);">
-              Instead of guessing why AI skips a great business, we test real buyer prompts across ChatGPT, Perplexity, Google Gemini, and Grok, spot where direct answers or trust signals are missing, and structure your pages so AI engines can read, verify, and cite your business cleanly.
-            </p>
-            <div class="mini-box" style="margin-top: 14px;">
-              <span>Why It Matters</span>
-              <strong>High Trust Isn't Enough Without Structure</strong>
-              <span>Strong licenses and 5-star reviews still get skipped when pricing ranges, timelines, and Q&amp;A aren't easy for AI to extract.</span>
-            </div>
-          </article>
-
-          <article class="geo-aeo-card">
-            <span class="tier-label">GEO &amp; AEO Simplified</span>
-            <h3>How AI Decides Who to Recommend</h3>
-            <p>
-              Think of old search like a <strong>library aisle</strong> where people browse ten options, and AI search like a <strong>trusted advisor</strong> who gives a direct answer. If your key facts are buried in vague marketing slogans, AI often skips you—even if you are great at what you do.
-            </p>
-            <div class="compare-mini">
-              <div class="mini-box">
-                <span>AEO (Answer Engine Optimization)</span>
-                <strong>Gives Direct Answers</strong>
-                <span>Turns real customer questions into clear, straight answers (pricing ranges, timelines, process, credentials) right on your page.</span>
-              </div>
-              <div class="mini-box">
-                <span>GEO (Generative Engine Optimization)</span>
-                <strong>Builds AI Trust &amp; Citations</strong>
-                <span>Aligns your business identity, service facts, and structured schema so AI summaries confidently name and recommend you.</span>
-              </div>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -917,7 +874,7 @@
               <div class="tier-note">100% Credited Toward Implementation</div>
               <div class="tier-subnote">Delivered within 48 hours</div>
               <ul class="tier-list">
-                <li><span class="check">&#10003;</span> 15 buyer prompts across ChatGPT, Perplexity, Gemini &amp; Grok</li>
+                <li><span class="check">&#10003;</span> 15 buyer prompts across ChatGPT, Perplexity, Gemini, Grok &amp; Claude</li>
                 <li><span class="check">&#10003;</span> Competitor citation gap breakdown</li>
                 <li><span class="check">&#10003;</span> Custom AI-ready service summary &amp; Q&amp;A copy</li>
                 <li><span class="check">&#10003;</span> Ready-to-deploy LocalBusiness &amp; FAQPage JSON-LD</li>
@@ -960,8 +917,8 @@
         <div class="method-grid">
           <div class="method-card">
             <span class="step-badge">STEP 01</span>
-            <h3>4-Engine Prompt Sweep</h3>
-            <p>We test 15 real buyer prompts across ChatGPT, Perplexity, Google Gemini, and Grok to record exact citations and omissions.</p>
+            <h3>5-Engine Prompt Sweep</h3>
+            <p>We test 15 real buyer prompts across ChatGPT, Perplexity, Google Gemini, Grok, and Claude to record exact citations and omissions.</p>
           </div>
           <div class="method-card">
             <span class="step-badge">STEP 02</span>
@@ -1017,7 +974,7 @@
       <div class="container">
         <h2>Real Searches Where AIs Did Not Recommend Them</h2>
         <p class="lead">
-          Filter and search real high-intent buyer prompts we already tested across ChatGPT, Perplexity, Gemini, and Grok where reputable businesses were skipped.
+          Filter and search real high-intent buyer prompts we already tested across ChatGPT, Perplexity, Gemini, Grok, and Claude where reputable businesses were skipped.
         </p>
 
         <div class="vault-controls">
@@ -1047,7 +1004,7 @@
         <details class="qa-accordion" open>
           <summary>Q: What is Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO)?</summary>
           <div class="qa-body">
-            AEO and GEO structure your website copy, direct buyer Q&amp;A blocks, JSON-LD entity schema, and business directory data so ChatGPT, Perplexity, Google Gemini, and Grok can clearly verify and recommend your business when customers ask who to hire.
+            AEO and GEO structure your website copy, direct buyer Q&amp;A blocks, JSON-LD entity schema, and business directory data so ChatGPT, Perplexity, Google Gemini, Grok, and Claude can clearly verify and recommend your business when customers ask who to hire.
           </div>
         </details>
 
@@ -1071,6 +1028,51 @@
             The $200 multi-prompt audit is delivered within 48 hours and is 100% credited toward full implementation if you move forward with rolling out the structured copy, Q&amp;A blocks, and schema fixes.
           </div>
         </details>
+      </div>
+    </section>
+
+    <section id="about-aeo-geo">
+      <div class="container">
+        <h2>Who We Are &amp; What GEO / AEO Means (Made Simple)</h2>
+        <p class="lead">Meet the lab behind the audits and see in plain English how AI answer engines choose which businesses to recommend.</p>
+
+        <div class="about-grid">
+          <article class="about-card">
+            <span class="tier-label">Who We Are</span>
+            <h3>Paul Adikemere O. — AEO &amp; GEO Visibility Lab</h3>
+            <p>
+              Led by <strong>Paul Adikemere O. (Paul Adikemere Onyekachi)</strong>, we help businesses get noticed and recommended inside AI answers—not just traditional blue search links.
+            </p>
+            <p style="color: var(--muted);">
+              Instead of guessing why AI skips a great business, we test real buyer prompts across ChatGPT, Perplexity, Google Gemini, Grok, and Claude, spot where direct answers or trust signals are missing, and structure your pages so AI engines can read, verify, and cite your business cleanly.
+            </p>
+            <div class="mini-box" style="margin-top: 14px;">
+              <span>Why It Matters</span>
+              <strong>High Trust Isn't Enough Without Structure</strong>
+              <span>Strong licenses and 5-star reviews still get skipped when pricing ranges, timelines, and Q&amp;A aren't easy for AI to extract.</span>
+            </div>
+          </article>
+
+          <article class="geo-aeo-card">
+            <span class="tier-label">GEO &amp; AEO Simplified</span>
+            <h3>How AI Decides Who to Recommend</h3>
+            <p>
+              Think of old search like a <strong>library aisle</strong> where people browse ten options, and AI search like a <strong>trusted advisor</strong> who gives a direct answer. If your key facts are buried in vague marketing slogans, AI often skips you—even if you are great at what you do.
+            </p>
+            <div class="compare-mini">
+              <div class="mini-box">
+                <span>AEO (Answer Engine Optimization)</span>
+                <strong>Gives Direct Answers</strong>
+                <span>Turns real customer questions into clear, straight answers (pricing ranges, timelines, process, credentials) right on your page.</span>
+              </div>
+              <div class="mini-box">
+                <span>GEO (Generative Engine Optimization)</span>
+                <strong>Builds AI Trust &amp; Citations</strong>
+                <span>Aligns your business identity, service facts, and structured schema so AI summaries confidently name and recommend you.</span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
@@ -1140,7 +1142,7 @@
         niche: "Construction & Remodeling",
         location: "Woodland Hills / West Valley, Los Angeles, CA",
         prompt: "Licensed general contractor in Woodland Hills & West Valley for kitchen remodel, bathroom remodel, or room addition—costs, timelines, and permitting?",
-        outcome: "Skipped across ChatGPT, Perplexity, Gemini, and Grok (4/4 sweep) despite A+ BBB rating & active CSLB license; conflicting address data noted."
+        outcome: "Skipped across ChatGPT, Perplexity, Gemini, Grok, and Claude (5/5 sweep) despite A+ BBB rating & active CSLB license; conflicting address data noted."
       },
       {
         business: "Shulmen Construction LA",
