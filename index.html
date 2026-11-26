@@ -402,6 +402,64 @@
     h2 { font-size: clamp(1.5rem, 4.6vw, 2.05rem); font-weight: 900; margin-bottom: 10px; line-height: 1.2; }
     .lead { color: var(--muted); font-size: 0.98rem; max-width: 740px; margin-bottom: 26px; }
 
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+    @media (min-width: 860px) {
+      .about-grid { grid-template-columns: 1.05fr 1.15fr; }
+    }
+    .about-card, .geo-aeo-card {
+      background: linear-gradient(150deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 22px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .about-card:hover, .geo-aeo-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--cyan);
+    }
+    .about-card h3, .geo-aeo-card h3 {
+      font-size: 1.18rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .about-card p, .geo-aeo-card p {
+      font-size: 0.94rem;
+      color: #e2e8f0;
+      margin-bottom: 12px;
+    }
+    .compare-mini {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    @media (min-width: 560px) {
+      .compare-mini { grid-template-columns: 1fr 1fr; }
+    }
+    .mini-box {
+      background: rgba(7, 8, 22, 0.78);
+      border: 1px solid rgba(0, 240, 255, 0.28);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .mini-box strong {
+      display: block;
+      color: var(--cyan);
+      font-size: 0.88rem;
+      margin-bottom: 4px;
+    }
+    .mini-box span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
     /* Transparent 3-Tier Pricing Grid */
     .pricing-grid {
       display: grid;
@@ -723,6 +781,7 @@
         </button>
       </div>
       <nav class="nav-links" id="navLinks">
+        <a href="#about-aeo-geo" onclick="closeMenu()">Who We Are &amp; GEO/AEO</a>
         <a href="#pricing" onclick="closeMenu()">Pricing</a>
         <a href="#methodology" onclick="closeMenu()">How We Test</a>
         <a href="#before-after" onclick="closeMenu()">Before &amp; After</a>
@@ -777,6 +836,46 @@
               <span class="tag-boost">Target: #1</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-aeo-geo">
+      <div class="container">
+        <h2>Who We Are &amp; What GEO / AEO Means (Made Simple)</h2>
+        <p class="lead">Meet the lab behind the audits and see in plain English how AI answer engines choose which businesses to recommend.</p>
+
+        <div class="about-grid">
+          <article class="about-card">
+            <span class="tier-label">Who We Are</span>
+            <h3>Paul Adikemere O. — AEO &amp; GEO Visibility Lab</h3>
+            <p>
+              Led by <strong>Paul Adikemere O. (Paul Adikemere Onyekachi)</strong>, we help businesses get noticed and recommended inside AI answers—not just traditional blue search links.
+            </p>
+            <p style="margin-bottom: 0; color: var(--muted);">
+              Instead of guessing why AI skips a great business, we test real buyer prompts across ChatGPT, Perplexity, Google Gemini, and Grok, spot where direct answers or trust signals are missing, and structure your pages so AI engines can read, verify, and cite your business cleanly.
+            </p>
+          </article>
+
+          <article class="geo-aeo-card">
+            <span class="tier-label">GEO &amp; AEO Simplified</span>
+            <h3>How AI Decides Who to Recommend</h3>
+            <p>
+              Think of old search like a <strong>library aisle</strong> where people browse ten options, and AI search like a <strong>trusted advisor</strong> who gives a direct answer. If your key facts are buried in vague marketing slogans, AI often skips you—even if you are great at what you do.
+            </p>
+            <div class="compare-mini">
+              <div class="mini-box">
+                <span>AEO (Answer Engine Optimization)</span>
+                <strong>Gives Direct Answers</strong>
+                <span>Turns real customer questions into clear, straight answers (pricing ranges, timelines, process, credentials) right on your page.</span>
+              </div>
+              <div class="mini-box">
+                <span>GEO (Generative Engine Optimization)</span>
+                <strong>Builds AI Trust &amp; Citations</strong>
+                <span>Aligns your business identity, service facts, and structured schema so AI summaries confidently name and recommend you.</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
