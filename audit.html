@@ -4,288 +4,352 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>1-Click AI Visibility Audit Launcher | Paul Adikemere O.</title>
-  <meta name="description" content="Launch live buyer prompts directly into ChatGPT, Perplexity, Google Gemini, and Grok to audit business recommendations." />
+  <meta name="description" content="Launch buyer visibility prompts across ChatGPT, Perplexity, Google Gemini, Grok, and Claude in one click or copy a custom 15-prompt audit bundle." />
   <meta name="theme-color" content="#070816" />
   <link rel="icon" type="image/svg+xml" href="logo.svg" />
+
   <style>
     :root {
       --bg: #070816;
-      --surface: rgba(18, 22, 48, 0.9);
-      --surface-2: rgba(29, 25, 66, 0.95);
-      --border: rgba(168, 85, 247, 0.32);
+      --surface: rgba(18, 22, 48, 0.88);
+      --surface-2: rgba(29, 25, 66, 0.94);
+      --border: rgba(168, 85, 247, 0.3);
       --cyan: #00f0ff;
       --violet: #a855f7;
       --emerald: #10b981;
+      --coral: #ff4d8d;
       --text: #f8fafc;
       --muted: #a5b4fc;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
       background-color: var(--bg);
       background-image:
-        radial-gradient(circle at 12% 10%, rgba(0, 240, 255, 0.2), transparent 36%),
-        radial-gradient(circle at 86% 20%, rgba(168, 85, 247, 0.24), transparent 40%);
+        radial-gradient(circle at 12% 12%, rgba(0, 240, 255, 0.2), transparent 36%),
+        radial-gradient(circle at 86% 18%, rgba(168, 85, 247, 0.24), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.14), transparent 45%);
       color: var(--text);
-      line-height: 1.55;
-      padding-bottom: 48px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
     }
-    .container { width: 100%; max-width: 940px; margin: 0 auto; padding: 0 18px; }
+
+    .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 18px; }
+    @media (min-width: 820px) { .container { padding: 0 28px; } }
+
     header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
       background: rgba(7, 8, 22, 0.9);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
-      padding: 14px 0;
-      margin-bottom: 24px;
     }
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      min-height: 76px;
+      gap: 14px;
       flex-wrap: wrap;
     }
-    .big-logo-img { height: 50px; width: auto; display: block; }
-    @media (min-width: 640px) { .big-logo-img { height: 58px; } }
+    .big-logo-img { height: 52px; width: auto; display: block; }
+    .nav-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .back-link {
       color: var(--cyan);
       text-decoration: none;
-      font-size: 0.9rem;
       font-weight: 800;
+      font-size: 0.9rem;
       padding: 9px 14px;
       border-radius: 10px;
       border: 1px solid rgba(0, 240, 255, 0.35);
-      background: var(--surface);
+      background: rgba(18, 22, 48, 0.85);
     }
-    h1 { font-size: clamp(1.5rem, 5vw, 2.2rem); font-weight: 900; margin-bottom: 8px; }
+    .back-link:hover { border-color: var(--emerald); color: var(--emerald); }
+
+    main { padding: 42px 0 64px; }
+    h1 {
+      font-size: clamp(1.85rem, 5vw, 2.75rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
     .rainbow-text {
       background: linear-gradient(90deg, var(--cyan), var(--violet), var(--emerald));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .sub { color: var(--muted); font-size: 0.96rem; margin-bottom: 22px; }
-    .card {
+    .lead { color: var(--muted); font-size: 1rem; max-width: 760px; margin-bottom: 28px; }
+
+    .launcher-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+    @media (min-width: 920px) {
+      .launcher-grid { grid-template-columns: 1fr 1.15fr; }
+    }
+
+    .panel {
       background: linear-gradient(150deg, var(--surface), var(--surface-2));
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 22px;
-      margin-bottom: 20px;
-      box-shadow: 0 20px 44px -16px rgba(0, 240, 255, 0.22);
+      padding: 24px;
     }
-    .field-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
-    @media (min-width: 680px) { .field-grid { grid-template-columns: 1fr 1fr; } }
+    .panel h2 { font-size: 1.2rem; font-weight: 900; color: #ffffff; margin-bottom: 14px; }
+
+    .field { margin-bottom: 14px; }
     label {
       display: block;
-      font-size: 0.78rem;
+      font-size: 0.84rem;
       font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
       color: var(--cyan);
       margin-bottom: 6px;
     }
     input, select, textarea {
       width: 100%;
-      background: rgba(7, 8, 22, 0.85);
-      border: 1px solid rgba(0, 240, 255, 0.35);
+      background: rgba(7, 8, 22, 0.82);
+      border: 1px solid rgba(0, 240, 255, 0.32);
       color: var(--text);
       border-radius: 12px;
-      padding: 12px 14px;
-      font-size: 16px;
+      padding: 11px 14px;
+      font-size: 0.95rem;
       font-family: inherit;
     }
-    textarea { min-height: 112px; resize: vertical; line-height: 1.5; }
-    .btn-grid {
+    textarea { min-height: 110px; resize: vertical; }
+
+    .prompt-preview {
+      background: rgba(7, 8, 22, 0.86);
+      border: 1px solid rgba(168, 85, 247, 0.45);
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 0.94rem;
+      color: #f8fafc;
+      margin-bottom: 18px;
+    }
+
+    .ai-launch-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 16px;
+      gap: 10px;
+      margin-bottom: 16px;
     }
-    @media (min-width: 640px) { .btn-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 540px) {
+      .ai-launch-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .ai-launch-grid .ai-btn-wide {
+      grid-column: 1 / -1;
+    }
+
+    .ai-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.92rem;
+      color: #ffffff;
+      background: rgba(7, 8, 22, 0.78);
+      border: 1px solid rgba(0, 240, 255, 0.35);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .ai-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--emerald);
+      box-shadow: 0 12px 24px -10px rgba(0, 240, 255, 0.35);
+    }
+    .ai-badge {
+      font-size: 0.74rem;
+      font-weight: 900;
+      color: var(--cyan);
+    }
+
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      min-height: 50px;
-      padding: 12px 18px;
+      min-height: 46px;
+      padding: 10px 18px;
       border-radius: 12px;
       font-weight: 800;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       cursor: pointer;
+      text-decoration: none;
       border: none;
-      text-decoration: none;
-      transition: transform 0.2s ease;
     }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-chatgpt { background: linear-gradient(135deg, #10b981, #059669); color: #04130d; }
-    .btn-perplexity { background: linear-gradient(135deg, #00f0ff, #0284c7); color: #050714; }
-    .btn-gemini { background: linear-gradient(135deg, #a855f7, #6366f1); color: #ffffff; }
-    .btn-grok { background: #1e293b; color: #f8fafc; border: 1px solid rgba(0, 240, 255, 0.4); }
-    .btn-copy {
-      background: linear-gradient(90deg, var(--cyan), var(--violet));
+    .btn-neon {
+      background: linear-gradient(135deg, var(--cyan), var(--violet), var(--emerald));
       color: #050714;
-      width: 100%;
-      margin-top: 12px;
     }
-    .status {
-      font-size: 0.86rem;
-      color: var(--emerald);
-      font-weight: 800;
-      margin-top: 10px;
-      min-height: 20px;
-    }
-    .social-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin: 26px 0 12px;
-    }
-    .social-chip {
-      display: inline-flex;
-      align-items: center;
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: rgba(18, 22, 48, 0.9);
-      border: 1px solid rgba(0, 240, 255, 0.35);
+    .btn-ghost {
+      background: rgba(7, 8, 22, 0.85);
       color: var(--cyan);
-      font-size: 0.84rem;
-      font-weight: 800;
-      text-decoration: none;
+      border: 1px solid var(--cyan);
     }
-    .footer-note {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.86rem;
-    }
-    .footer-note a { color: var(--cyan); text-decoration: none; font-weight: 700; }
   </style>
 </head>
 <body>
   <header>
     <div class="container header-inner">
-      <a href="index.html" aria-label="Back to Home">
-        <img src="logo.svg" alt="Paul Adikemere O. — 3D AEO & GEO Visibility Logo" class="big-logo-img" />
+      <a href="index.html" aria-label="Back to Paul Adikemere O. Showcase">
+        <img src="logo.svg" alt="Paul Adikemere O. Logo" class="big-logo-img" />
       </a>
-      <a href="index.html" class="back-link">&larr; Back to Showcase</a>
+      <div class="nav-group">
+        <a href="index.html" class="back-link">&larr; Back to Showcase</a>
+        <a href="index.html#pricing" class="back-link">Pricing ($0 / $200)</a>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <h1>1-Click <span class="rainbow-text">AI Visibility Audit Launcher</span></h1>
-    <p class="sub">Select a real audited preset or enter any business + city to test live buyer recommendations across ChatGPT, Perplexity, Gemini, and Grok.</p>
+  <main>
+    <div class="container">
+      <h1>1-Click <span class="rainbow-text">AI Visibility Audit Launcher</span></h1>
+      <p class="lead">
+        Pick an audited preset or type a custom business, city, and buyer question—then launch it across <strong>ChatGPT, Perplexity, Google Gemini, Grok, and Claude</strong>.
+      </p>
 
-    <div class="card">
-      <div class="field-grid">
-        <div>
-          <label for="preset">Audited Real-World Case Preset</label>
-          <select id="preset" onchange="applyPreset()">
-            <option value="5stars">5 Stars Home Remodeling Inc. — Woodland Hills / West Valley, CA</option>
-            <option value="shulmen">Shulmen Construction LA — Los Angeles, CA</option>
-            <option value="apremodeling">AP Remodeling Inc. — Los Angeles / SoCal, CA</option>
-            <option value="luxedental">Luxe Dental Cosmetics — California</option>
-            <option value="rancho">Rancho Bernardo Cosmetic &amp; Family Dental Care — San Diego, CA</option>
-            <option value="custom">Custom Business &amp; City</option>
-          </select>
-        </div>
-        <div>
-          <label for="cityInput">City / Service Area</label>
-          <input type="text" id="cityInput" value="Woodland Hills & West Valley, Los Angeles, CA" oninput="updatePrompt()" />
-        </div>
-      </div>
+      <div class="launcher-grid">
+        <section class="panel">
+          <h2>1. Configure Buyer Prompt</h2>
 
-      <div style="margin-top: 14px;">
-        <label for="serviceInput">Service / Specialty</label>
-        <input type="text" id="serviceInput" value="licensed general contractor for kitchen remodel, bathroom remodel, or room addition" oninput="updatePrompt()" />
-      </div>
+          <div class="field">
+            <label for="presetSelect">Audited Case Preset</label>
+            <select id="presetSelect" onchange="applyPreset()">
+              <option value="0">5 Stars Home Remodeling Inc. — Woodland Hills, CA</option>
+              <option value="1">Shulmen Construction LA — Los Angeles, CA</option>
+              <option value="2">AP Remodeling Inc. — Southern California, CA</option>
+              <option value="3">Luxe Dental Cosmetics — California</option>
+              <option value="4">Rancho Bernardo Cosmetic &amp; Family Dental Care — San Diego, CA</option>
+            </select>
+          </div>
 
-      <div style="margin-top: 14px;">
-        <label for="promptBox">Live Buyer Prompt</label>
-        <textarea id="promptBox"></textarea>
-        <button type="button" class="btn btn-copy" onclick="copyPrompt()">Copy Prompt to Clipboard</button>
-        <div class="status" id="statusMsg"></div>
-      </div>
+          <div class="field">
+            <label for="bizName">Target Business Name</label>
+            <input type="text" id="bizName" oninput="updatePrompt()" />
+          </div>
 
-      <div class="btn-grid">
-        <a id="chatgptLink" class="btn btn-chatgpt" target="_blank" rel="noopener noreferrer" onclick="copyPrompt()">Open in ChatGPT &nearr;</a>
-        <a id="perplexityLink" class="btn btn-perplexity" target="_blank" rel="noopener noreferrer" onclick="copyPrompt()">Open in Perplexity &nearr;</a>
-        <a id="geminiLink" class="btn btn-gemini" target="_blank" rel="noopener noreferrer" onclick="copyPrompt()">Open in Google Gemini &nearr;</a>
-        <a id="grokLink" class="btn btn-grok" target="_blank" rel="noopener noreferrer" onclick="copyPrompt()">Open in Grok &nearr;</a>
+          <div class="field">
+            <label for="bizCity">City / Service Area</label>
+            <input type="text" id="bizCity" oninput="updatePrompt()" />
+          </div>
+
+          <div class="field">
+            <label for="buyerPrompt">Buyer Prompt to Test Across All 5 AIs</label>
+            <textarea id="buyerPrompt" oninput="updatePrompt()"></textarea>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>2. Launch Across All 5 AI Engines</h2>
+          <div class="prompt-preview" id="promptPreview"></div>
+
+          <div class="ai-launch-grid">
+            <a id="linkChatGPT" href="#" target="_blank" rel="noopener noreferrer" class="ai-btn">
+              <span>ChatGPT</span>
+              <span class="ai-badge">Open &rarr;</span>
+            </a>
+            <a id="linkPerplexity" href="#" target="_blank" rel="noopener noreferrer" class="ai-btn">
+              <span>Perplexity</span>
+              <span class="ai-badge">Open &rarr;</span>
+            </a>
+            <a id="linkGemini" href="#" target="_blank" rel="noopener noreferrer" class="ai-btn">
+              <span>Google Gemini</span>
+              <span class="ai-badge">Open &rarr;</span>
+            </a>
+            <a id="linkGrok" href="#" target="_blank" rel="noopener noreferrer" class="ai-btn">
+              <span>Grok</span>
+              <span class="ai-badge">Open &rarr;</span>
+            </a>
+            <a id="linkClaude" href="#" target="_blank" rel="noopener noreferrer" class="ai-btn ai-btn-wide">
+              <span>Claude</span>
+              <span class="ai-badge">Launch in Claude &rarr;</span>
+            </a>
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="btn btn-neon" id="copyPromptBtn" onclick="copyCurrentPrompt()">Copy Prompt to Clipboard</button>
+            <a href="mailto:pauladikemere@gmail.com?subject=Full%2015-Prompt%20AI%20Visibility%20Audit%20(%24200)" class="btn btn-ghost">Book $200 Full Audit</a>
+          </div>
+        </section>
       </div>
     </div>
-
-    <div class="social-row" aria-label="Social Media Profiles">
-      <a href="https://www.linkedin.com/in/paul-adikemere-439041137/" target="_blank" rel="noopener noreferrer" class="social-chip">LinkedIn</a>
-      <a href="https://youtube.com/@pauladikemere?si=AJsvOseAAatMHbAA" target="_blank" rel="noopener noreferrer" class="social-chip">YouTube</a>
-      <a href="https://www.tiktok.com/@adikemere_paul" target="_blank" rel="noopener noreferrer" class="social-chip">TikTok</a>
-      <a href="https://www.facebook.com/share/1A1FtnaSUa/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-chip">Facebook</a>
-    </div>
-    <p class="footer-note">&copy; 2026 Paul Adikemere O. — AEO &amp; GEO Visibility Lab. Contact: <a href="mailto:pauladikemere@gmail.com">pauladikemere@gmail.com</a></p>
   </main>
 
   <script>
-    const presets = {
-      "5stars": {
-        city: "Woodland Hills & West Valley, Los Angeles, CA",
-        service: "licensed general contractor for kitchen remodel, bathroom remodel, or room addition"
+    const presets = [
+      {
+        name: "5 Stars Home Remodeling Inc.",
+        city: "Woodland Hills / West Valley, Los Angeles, CA",
+        prompt: "Licensed general contractor in Woodland Hills & West Valley for kitchen remodel, bathroom remodel, or room addition—costs, timelines, and permitting? Which businesses should I compare?"
       },
-      "shulmen": {
+      {
+        name: "Shulmen Construction LA",
         city: "Los Angeles, CA",
-        service: "licensed general contractor for custom home build, kitchen/bath remodel, or ADU"
+        prompt: "Licensed general contractor in Los Angeles for custom home build, kitchen/bath remodel, or ADU—typical costs, timelines, and permits?"
       },
-      "apremodeling": {
-        city: "Los Angeles & Southern California, CA",
-        service: "trusted general remodeling contractor for full home renovation, kitchen remodel, and additions"
+      {
+        name: "AP Remodeling Inc.",
+        city: "Los Angeles / Southern California, CA",
+        prompt: "Trusted general remodeling contractor for home renovation, kitchen remodel, and additions—pricing ranges and project timelines?"
       },
-      "luxedental": {
+      {
+        name: "Luxe Dental Cosmetics",
         city: "California",
-        service: "top cosmetic dentist for porcelain veneers, smile makeovers, and aesthetic dental care"
+        prompt: "Top cosmetic dentist for veneers, smile makeovers, and aesthetic dental care—cost ranges, insurance, and what to expect?"
       },
-      "rancho": {
-        city: "Rancho Bernardo, San Diego, CA",
-        service: "cosmetic and family dentist for dental implants, veneers, and PPO family dental care"
+      {
+        name: "Rancho Bernardo Cosmetic & Family Dental Care",
+        city: "Rancho Bernardo / San Diego, CA",
+        prompt: "Cosmetic and family dentist in Rancho Bernardo (San Diego) for implants, veneers, and family care—costs and PPO insurance?"
       }
-    };
+    ];
 
     function applyPreset() {
-      const val = document.getElementById('preset').value;
-      if (presets[val]) {
-        document.getElementById('cityInput').value = presets[val].city;
-        document.getElementById('serviceInput').value = presets[val].service;
-      }
+      const idx = Number(document.getElementById("presetSelect").value) || 0;
+      const p = presets[idx];
+      document.getElementById("bizName").value = p.name;
+      document.getElementById("bizCity").value = p.city;
+      document.getElementById("buyerPrompt").value = p.prompt;
       updatePrompt();
     }
 
     function updatePrompt() {
-      const city = document.getElementById('cityInput').value.trim() || "Los Angeles, CA";
-      const service = document.getElementById('serviceInput').value.trim() || "trusted local specialist";
-      const text = `Who is the best ${service} in ${city}? Please share specific recommended businesses, typical cost ranges, timelines, licensing/credentials, and what makes them stand out.`;
-      document.getElementById('promptBox').value = text;
-      syncLinks(text);
+      const biz = document.getElementById("bizName").value.trim();
+      const city = document.getElementById("bizCity").value.trim();
+      const rawPrompt = document.getElementById("buyerPrompt").value.trim();
+      const fullText = rawPrompt || "Recommend top local options with pricing ranges and timelines.";
+      const encoded = encodeURIComponent(fullText);
+
+      document.getElementById("promptPreview").textContent =
+        (biz ? `Benchmarking for: ${biz}${city ? ` (${city})` : ""}
+
+` : "") + fullText;
+
+      document.getElementById("linkChatGPT").href = `https://chatgpt.com/?q=${encoded}`;
+      document.getElementById("linkPerplexity").href = `https://www.perplexity.ai/search?q=${encoded}`;
+      document.getElementById("linkGemini").href = `https://gemini.google.com/app?q=${encoded}`;
+      document.getElementById("linkGrok").href = `https://grok.com/?q=${encoded}`;
+      document.getElementById("linkClaude").href = `https://claude.ai/new?q=${encoded}`;
     }
 
-    function syncLinks(text) {
-      const enc = encodeURIComponent(text);
-      document.getElementById('chatgptLink').href = `https://chatgpt.com/?q=${enc}`;
-      document.getElementById('perplexityLink').href = `https://www.perplexity.ai/search?q=${enc}`;
-      document.getElementById('geminiLink').href = `https://gemini.google.com/app?q=${enc}`;
-      document.getElementById('grokLink').href = `https://grok.com/?q=${enc}`;
+    function copyCurrentPrompt() {
+      const text = document.getElementById("buyerPrompt").value.trim();
+      const btn = document.getElementById("copyPromptBtn");
+      if (!text || !navigator.clipboard) return;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = "Copied Prompt!";
+        setTimeout(() => { btn.textContent = "Copy Prompt to Clipboard"; }, 2500);
+      }).catch(() => {});
     }
 
-    document.getElementById('promptBox').addEventListener('input', (e) => {
-      syncLinks(e.target.value);
-    });
-
-    function copyPrompt() {
-      const box = document.getElementById('promptBox');
-      box.select();
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(box.value).catch(() => {});
-      }
-      document.getElementById('statusMsg').textContent = "Prompt copied! Paste directly into the AI engine if it doesn't auto-fill.";
-    }
-
-    updatePrompt();
+    applyPreset();
   </script>
 </body>
 </html>
