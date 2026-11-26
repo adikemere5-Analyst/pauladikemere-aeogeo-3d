@@ -133,16 +133,19 @@
     }
 
     .ai-launch-grid {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
       margin-bottom: 16px;
     }
-    @media (min-width: 540px) {
-      .ai-launch-grid { grid-template-columns: repeat(2, 1fr); }
+    .ai-launch-grid .ai-btn {
+      width: 100%;
     }
-    .ai-launch-grid .ai-btn-wide {
-      grid-column: 1 / -1;
+    @media (min-width: 540px) {
+      .ai-launch-grid .ai-btn {
+        width: calc(50% - 5px);
+      }
     }
 
     .ai-btn {
@@ -267,7 +270,7 @@
               <span>Grok</span>
               <span class="ai-badge">Open &rarr;</span>
             </a>
-            <a id="linkClaude" href="#" target="_blank" rel="noopener noreferrer" class="ai-btn ai-btn-wide">
+            <a id="linkClaude" href="#" target="_blank" rel="noopener noreferrer" class="ai-btn">
               <span>Claude</span>
               <span class="ai-badge">Launch in Claude &rarr;</span>
             </a>
